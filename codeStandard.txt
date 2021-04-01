@@ -1,0 +1,4 @@
+all class name will be Pascal 
+all parameter : small
+all const : small 
+ 
