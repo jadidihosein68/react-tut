@@ -124,3 +124,44 @@ const etacher = new Teacher("kambiz" ,"fucker");
 ////////////////////////////////////// modules ! 
 
 Each file call a module. 
+
+
+/////////////////////////////////////
+ctr + D is cool ! 
+
+get married with Framework !
+
+1- React.Fragment help you to bind the whole DOM 
+2- state = {}; => include data that component need ! 
+3- jsx expresion are just like other element
+4- instead of class we will use className in jsx
+5- to add style we have to add it in plain js object
+        styles={
+        fontWeight : 'bold'
+        fontSize : 10    // => equal tp '10px'
+        } /// CSS property in camel case notation ! 
+        <span style={this.styles}> </span>
+    an other approach with inline styles : 
+    <span style={{ontWeight : 'bold'}}> </span>
+6- example of ng for : (we use map instead :D !)
+        <ul>
+               {this.state.tags.map(tag=><li key={tag}>{tag}</li>)}
+        </ul>
+7- logical && between different data type will return the data type if true. => falsy or truthy operation , if all true return last one ! 
+8- event just like jquery ! we just dont call it example : onClick={this.handleIncrement}
+9- if you want to use the state object you have to bind it :D ! in the constructor we have access to binding object
+
+  constructor  (){
+      super();
+    console.log(this);
+    this.handleIncrement = this.handleIncrement.bind(this);
+
+  }
+  is the same as : 
+    handleIncrement =() => {
+      this...
+  }
+
+10- to update state follow approach below : 
+    // this.state.count++; // it wont work ! instead we will use line below : 
+    this.setState({count : this.state.count +1});
