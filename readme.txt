@@ -174,3 +174,6 @@ get married with Framework !
     };
 
 11- children using to pass content between opening and closing tags 
+12- prop vs state : prop pass daqta to component, state are th elocal data of component, state is private to component (and you can pass the data to kid), prop is read only !
+13- the component who own the state is the one who should modify it ! 
+14- buble up the event, like eventemitter. to do so make the functiopn on parent and add it as ondelete, on the kid use the this.prop.mymethod;
