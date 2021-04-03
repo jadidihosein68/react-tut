@@ -5,8 +5,8 @@
 import React, { Component } from "react";
 class Counter extends Component {
   state = {
-    count: 0,
-    tags: ["tag1", "tag2", "tag3"],
+    value: this.props.value, // get the value from imported fields 
+    tags: ["tag1"],
   };
 
 
@@ -31,13 +31,18 @@ class Counter extends Component {
 
   handleIncrement = product => {
       // this.state.count++; // it wont work ! instead we will use line below : 
-    this.setState({count : this.state.count +1});
+    this.setState({value : this.state.value +1});
       console.log(this);
   }
 
   render() {
+
+    console.log('prop',this.props);
+
     return (
       <React.Fragment>
+
+        {this.props.children}
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button onClick={()=> this.handleIncrement()} className="btn btn-secondary btn-sm">
           Increament
@@ -51,12 +56,12 @@ class Counter extends Component {
 
   getBadgeClasses() {
     let classes = "badge m-2";
-    classes += this.state.count === 0 ? " badge-warning" : " badge-primary";
+    classes += this.state.value === 0 ? " badge-warning" : " badge-primary";
     return classes;
   }
 
   formatCount() {
-    const { count } = this.state;
+    const { value: count } = this.state;
     return count === 0 ? "Zero" : count;
   }
 }

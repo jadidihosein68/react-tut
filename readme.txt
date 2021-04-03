@@ -165,3 +165,12 @@ get married with Framework !
 10- to update state follow approach below : 
     // this.state.count++; // it wont work ! instead we will use line below : 
     this.setState({count : this.state.count +1});
+
+11- props are all the imported field to the component 
+    in the component we use like the line below : 
+    state = {
+        count: this.props.value, // get the value from imported fields 
+        tags: ["tag1"],
+    };
+
+11- children using to pass content between opening and closing tags 
