@@ -177,3 +177,5 @@ get married with Framework !
 12- prop vs state : prop pass daqta to component, state are th elocal data of component, state is private to component (and you can pass the data to kid), prop is read only !
 13- the component who own the state is the one who should modify it ! 
 14- buble up the event, like eventemitter. to do so make the functiopn on parent and add it as ondelete, on the kid use the this.prop.mymethod;
+15- Source of true : eevery component initiate the state once at the begining, if you want to modify this state you need to use a single source of truth 
+16- we should not directlly modify the state of object, and we should let react to do it by setState function :D ! 
