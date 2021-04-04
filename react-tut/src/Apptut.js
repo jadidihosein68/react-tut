@@ -31,6 +31,18 @@ class Apptut extends Component {
  };
 
 
+
+ 
+ handleDecrement=counter=>{
+
+  const counters=[...this.state.counters];
+  const indexs = counters.indexOf(counter)
+  counters[indexs]={...counter}
+  counters[indexs].value--;
+  this.setState({counters});
+
+};
+
  
 
  handleDelete=(CounterID)=>{
@@ -53,7 +65,15 @@ class Apptut extends Component {
 
  };
 
+ componentDidMount(){
+//call ajax here ! 
+console.log("call ajax here ! ");
 
+ }
+
+
+
+ cons
 
   render() {
     return (
@@ -64,6 +84,7 @@ class Apptut extends Component {
             counters={this.state.counters}
             onReset={this.handleReset} 
             onIncrement={this.handleIncrement} 
+            onDecrement={this.handleDecrement} 
             onDelete={this.handleDelete} 
             ></Counters>
 

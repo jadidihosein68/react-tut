@@ -182,3 +182,15 @@ get married with Framework !
 
 17- stateless functional component mark with function :D ! 
 
+18 life cycle hooks : (Mount) => {mount.render; mount.componentDidMount}, (update)=>{update.render; render.componentDidUpdate} and (unmount)=>unmount.componentWillUnmount !
+
+order : constractur -> render -> did mount 
+
+
+19 - we can not set state in constructure., asisgn directlly.
+
+20- best place to call ajax ->  componentDidMount(){}
+
+21- during render all the kids also rendered ! 
+
+22- call only before removing a DOM -> componentWillUnmount
