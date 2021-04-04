@@ -26,12 +26,12 @@ ReactDOM.render(<Counters/>, document.getElementById('root'));
 */
 
 
+/*
 ReactDOM.render(<Apptut/>, document.getElementById('root'));
 registerServiceWorker();
+*/
 
 
 
-/*
 ReactDOM.render(<App/>, document.getElementById('root'));
 registerServiceWorker();
-*/
