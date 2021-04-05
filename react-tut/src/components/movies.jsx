@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import Like from "./like";
 import Pagination from "./pagination";
-
-
 import { getMovies } from "../services/fakeMovieService";
+
+import {paginate} from '../utils/paginate';
 
 class Movies extends Component {
   state = {
     movies: getMovies(),
-    pageSize : 10
+    currentPage:1,
+    pageSize: 5,
   };
 
   handleDelete = (movie) => {
@@ -19,32 +20,29 @@ class Movies extends Component {
     this.setState({ movies: _movies });
   };
 
-
-
-
-  handleLike=(movie)=>{
-
+  handleLike = (movie) => {
     console.log(movie);
     const movies = [...this.state.movies];
-    const index =movies.indexOf(movie);
-    movies[index]={...movies[index]};
+    const index = movies.indexOf(movie);
+    movies[index] = { ...movies[index] };
     movies[index].liked = !movies[index].liked;
-    this.setState({movies});
+    this.setState({ movies });
+  };
 
-  }
-
-
-
-  handlePageChanges = (page) =>{
-
-console.log(page);
-
-  }
+  handlePageChanges = (page) => {
+    
+    this.setState({ currentPage:page });
+    //console.log(page);
+  };
 
   render() {
     const { length: count } = this.state.movies; // length known as count.
+    const {pageSize, currentPage, movies:allMovie} = this.state;
 
     if (count === 0) return <p>there are no movies in the database.</p>;
+
+
+    const movies = paginate(allMovie,currentPage,pageSize);
 
     return (
       <React.Fragment>
@@ -61,14 +59,17 @@ console.log(page);
             </tr>
           </thead>
           <tbody>
-            {this.state.movies.map((movie) => (
+            {movies.map((movie) => (
               <tr key={movie._id}>
                 <td>{movie.title}</td>
                 <td>{movie.genre.name}</td>
                 <td>{movie.numberInStock}</td>
                 <td>{movie.dailyRentalRate}</td>
                 <td>
-                  <Like liked={movie.liked} onClick={()=>this.handleLike(movie)}></Like>
+                  <Like
+                    liked={movie.liked}
+                    onClick={() => this.handleLike(movie)}
+                  ></Like>
                 </td>
                 <td>
                   <button
@@ -83,7 +84,12 @@ console.log(page);
           </tbody>
         </table>
 
-        <Pagination   itemsCount={count} pageSize ={this.state.pageSize} onPageChange={this.handlePageChanges}></Pagination>
+        <Pagination
+          itemsCount={count}
+          pageSize={pageSize}
+          onPageChange={this.handlePageChanges}
+          currentPage={currentPage}
+        ></Pagination>
       </React.Fragment>
     );
   }
