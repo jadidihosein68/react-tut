@@ -194,3 +194,7 @@ order : constractur -> render -> did mount
 21- during render all the kids also rendered ! 
 
 22- call only before removing a DOM -> componentWillUnmount
+
+23- type checking will help you to prevent error 
+
+24- we use prop-types for validation.
