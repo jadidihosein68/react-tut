@@ -16,7 +16,8 @@ class Movies extends Component {
   };
 
   componentDidMount() {
-    this.setState({ movies: getMovies(), genre: getGenres() });
+    console.log("here !");
+    this.setState({ movies: getMovies(), genres: getGenres() });
   }
 
   handleDelete = (movie) => {
@@ -57,6 +58,8 @@ class Movies extends Component {
       <div className="row">
         <div className="col-2">
           <ListGroup
+            textProperty="name"
+            valueProperty="_id"
             items={this.state.genres}
             onItemSelect={this.handleGenreSelect}
           ></ListGroup>
