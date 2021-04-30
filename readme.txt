@@ -198,3 +198,6 @@ order : constractur -> render -> did mount
 23- type checking will help you to prevent error 
 
 24- we use prop-types for validation.
+
+
+until begining of section 5. 

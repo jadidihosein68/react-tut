@@ -22,9 +22,10 @@ import 'font-awesome/css/font-awesome.css';
 /*
 // fopr study purposr only !
 import Counter from "./components/counter"
+import Counters from "./components/counters";
 ReactDOM.render(<Counters/>, document.getElementById('root'));
+registerServiceWorker();
 */
-
 
 /*
 ReactDOM.render(<Apptut/>, document.getElementById('root'));
